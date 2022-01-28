@@ -1,0 +1,1 @@
+# deformation-resistance-defect-detection-algorithm
