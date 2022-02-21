@@ -7,6 +7,8 @@ Therefore, a fabric defect detection algorithm based on fuzzy matching and misma
 Please modify the image path on lines 24 and 25 in the file main.cpp according to the actual storage location of the image. Img1 is the sample image and imgt is the template.
 Visit [URL](https://tianchi.aliyun.com/competition/entrance/231748/information) for full dataset.
 ## Results
-Can be seen in [here](https://github.com/HRW1/deformation-resistant-defect-detection-algorithm/tree/main/res).
+Can be seen in [res](https://github.com/HRW1/deformation-resistant-defect-detection-algorithm/tree/main/res).
+
+Image x_n.jpg is the result of x.jpg in [data_tc](https://github.com/HRW1/deformation-resistant-defect-detection-algorithm/tree/main/data_tc). For example: 2_1.jpg is the result of 2.jpg in data_tc.
 ## Contact
 E-mail：hrwen@mail.dhu.edu.cn
