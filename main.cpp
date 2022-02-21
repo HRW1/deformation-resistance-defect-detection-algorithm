@@ -15,17 +15,16 @@ using namespace cv;
 
 int OP_vol = 1; //使用体积滤波OP_vol=1，使用形态学OP_vol=0
 Mat img;
-string s="6";
+string Path_ig="Path1";
+string Path_tm="Path2";
+string Path_mr="Path3";
 
 int main() {
     Mat img1,image1,imgt,imaget;
     Mat RdBoxRes, Mask;
 
-    img1 = imread("./data_tc/"+s+".jpg");
-    imgt = imread("./data_tc/"+s+"t.jpg");
-
-//    img1 = imread("E:/Clion/def_det/deform/10.jpg");
-//    imgt = imread("E:/Clion/def_det/deform/0.jpg");
+    img1 = imread(Path_ig);
+    imgt = imread(Path_tm);
 
     if(img1.rows != imgt.rows || img1.cols != imgt.cols){
         cout<<"Template size ("<<imgt.rows<<", "<<imgt.cols<<") is not equal to test image's ("<<img1.rows<<", "<<img1.cols<<")."<<endl;
@@ -121,7 +120,7 @@ int main() {
 
     //读取人工标注图
     Mat mark,mark1;
-    mark = imread("./mark/"+s+".jpg");
+    mark = imread(Path_mr);
     if(!mark.empty()) {
         resize(mark, mark1, Size(img1.cols / TIMES, img1.rows / TIMES), 0, 0, INTER_LINEAR);
         cvtColor(mark1, mark, COLOR_BGR2GRAY);
@@ -165,8 +164,6 @@ int main() {
         cout << "TPR=" << TPR  << "\tPPV=" << PPV  << "\tF1=" << F1 <<endl;
         cout <<setiosflags(ios::fixed) <<setprecision(1) << F1*100 << "/" << TPR*100  << "/" << PPV*100 <<endl;
 
-        //输出彩色结果
-//    imwrite("./res/"+s+"_6.jpg",clr_res);
 
         //显示彩色结果
         namedWindow("clr_res", WINDOW_AUTOSIZE);
